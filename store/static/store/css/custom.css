@@ -21,6 +21,10 @@
     margin-right: 10px;
 }
 
+.zme {
+  z-index: 200;
+}
+
 #logo-container span {
     font-family:'Courier New', Courier, monospace;
 }
