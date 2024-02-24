@@ -21,9 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
-DEBUG = bool(os.getenv('DEBUG'))
-ALLOWED_HOSTS = ["students-voting-center.onrender.com"]
+#DEBUG = bool(os.getenv('DEBUG'))
 
+DEBUG = False
+
+ALLOWED_HOSTS = ["students-voting-center.onrender.com"]
 
 # Application definition
 
