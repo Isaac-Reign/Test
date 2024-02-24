@@ -36,13 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
+
     'django.contrib.sitemaps',
     'store',
 
     'django_otp',
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_static',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -108,12 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -129,17 +125,17 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
-#STATICFILES_DIRS = [
- #    os.path.join(BASE_DIR, 'store/static')
-# ]
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, 'store/static')
+ ]
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFiles'
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
