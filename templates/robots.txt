@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: /admin
 
-Sitemap: https://products_showcase.onrender.com/sitemap.xml
+https://students-voting-center.onrender.com/sitemap.xml
