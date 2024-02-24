@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = bool(os.getenv('DEBUG'))
-ALLOWED_HOSTS = ["isaac-portfolio.onrender.com"]
+ALLOWED_HOSTS = ["students-voting-center.onrender.com"]
 
 
 # Application definition
