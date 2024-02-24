@@ -17,10 +17,10 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#e.g 'django-insecure-#%k8k*3-63@h*2=nf(za-o&dio53k)3zxv3&_o2h)w8r%&v@v#'
+SECRET_KEY = 'django-insecure-#%k8k*3-63@h*2=nf(za-o&dio53k)3zxv3&_o2h)w8r%&v@v#'
 
 
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+#SECRET_KEY = str(os.getenv('SECRET_KEY'))
 #DEBUG = bool(os.getenv('DEBUG'))
 
 DEBUG = False
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
+   # 'whitenoise.runserver_nostatic',
 
     'django.contrib.sitemaps',
     'store',
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,21 +121,15 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-STATIC_URL = 'static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
-
-STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, 'store/static')
- ]
-
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/' 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'store/static')]
 
-#STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
