@@ -22,7 +22,7 @@ def send_email(request):
             send_mail(
                 'New Contact Form Submission',
                 f'Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}',
-                'shenyunnewmaterials@gmail.com',
+                f'{email}',
                 ['shenyunnewmaterials@gmail.com'],
                 fail_silently=False,
             )
