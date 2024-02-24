@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /admin
+
+Sitemap: https://products_showcase.onrender.com/sitemap.xml

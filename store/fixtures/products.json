@@ -1,0 +1,249 @@
+[
+    {
+        "model": "store.ProductCategory",
+        "pk": 1,
+        "fields": {
+            "name": "Carbon Fiber Products",
+            "description": "Jiaxing Shen yun New material Co., Ltd is specialized in selling carbon fiberglass, carbon fiber fabrics and the basic material of mat. By using Machine Stitching, weaving, needling, non-woven and combination process to make excellent carbon fiber serve to different production technology and required mechanical properties. It can be divided into carbon fiber fabrics, Carbon Fiber UD Fabric, Surface veil, tapes, tubes etc",
+            "application_area": "Aerospace & Aviation, Military industry and wind power industry,  Transportation, Construction Industry, Medical equipment, Sports products",
+            "suitable_production_process": "Prepreg process, Vacuum Infusion Process, hand Lay-up, molding process, Holding pressure tank process",
+            "characteristics": "With high strength, high modulus, high temperature resistance, wear resistance, corrosion resistance, fatigue resistance, electrical conductivity, electric heating and infrared radiation and other excellent properties."
+        }
+    },
+    {
+        "model": "store.ProductCategory",
+        "pk": 2,
+        "fields": {
+            "name": "Basalt Fiber Products",
+            "description": "Jiaxing Shen yun New material Co., Ltd is specialized in selling basalt fiberglass, basalt fiber fabrics and the basic material of mat. By using Machine Stitching, weaving, needling, non-woven and combination process to make excellent basalt fiber serve to different production technology and required mechanical properties. It can be divided into basalt fiber roving, basalt Fiber UD Fabric, Surface veil, tapes, tubes etc.",
+            "application_area": "Aerospace & Aviation, Transportation, Construction Industry, Thermal Insulation",
+            "suitable_production_process": "Prepreg process, Vacuum infusion process, hand Lay-up, molding process, Holding pressure tank process",
+            "characteristics": "With good resistance to low temperature and high temperature resistance, but also has low bulk density, low thermal conductivity, thermal shock resistanceChemical corrosion, high elastic modulus, wear resistance, good wear resistance, good permeability."
+        }
+    },
+    {
+        "model": "store.ProductCategory",
+        "pk": 3,
+        "fields": {
+            "name": "Aramid Fiber Fabrics",
+            "description": "Jiaxing Shen yun New material Co., LtdCo., Ltd is specialized in selling aramid fiberglass , aramid fiber fabrics and the basic material of mat. By using machine stitching, weaving, needling, non-woven and combination process to make excellent aramid fiber serve to different production technology and required mechanical properties. It can be divided into aramid fiber roving , aramid fiber UD fabric, surfac veil , tape, tubes etc.",
+            "application_area": "Aerospace & Aviation, Transportation, Construction Industry, Termal insulation.",
+            "suitable_production_process": "Prepreg process, Vacuum infusion process, hand Lay-up , Molding process, Holding pressure tank process.",
+            "characteristics": "With good resistance to low temperature and high temperature resistance, but also has low bulk density, low thermal conductivity, thermal shock resistance, chemical corrosion resistance, high elastic modulus, wear resistance, good performance, good permeability."
+        }
+    },
+    {
+        "model": "store.ProductCategory",
+        "pk": 4,
+        "fields": {
+            "name": "Hybrid Fiber Products",
+            "description": "Jiaxing Shen yun New material Co., Ltd is specialized in provide Hybrid Fabric. The fabrics weave together between Carbon fiber, Aramid Fabric, Steel Wire and etc. which helps in fiber performance Complementary, rich fabric color and texture, cost balance.",
+            "application_area": "Aerospace & Aviation, Transportation, Medical equipment, Sports products, bags & suitcases",
+            "suitable_production_process": "Prepreg process, Vacuum Infusion Process, hand Lay-up, PU Coating, Holding pressure tank process",
+            "characteristics": "With good resistance to low temperature and high temperature resistance, but also has low bulk density, low thermal conductivity, thermal shock resistanceChemical corrosion, high elastic modulus, wear resistance, good wear resistance, good permeability."
+        }
+    },
+
+
+    
+    {
+        "model": "store.Product",
+        "pk": 1,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber UD Fabric",
+            "product_category": 1,
+            "description": "Carbon Fiber UD fabrics is weaved by carbon fiber through 0° and 90°. Regard 0° as the main direction. And then 90° direction. Proceed to biaxial fabrics, according to different requirements, customers can choose different density.",
+            "image_one": "/image-005.jpg",
+            "image_two": "/image-006.jpg",
+            "image_three": "/image-007.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 2,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Roving (Plain Weave)",
+            "product_category": 1,
+            "description": "Carbon Fiber Roving (plain) is weaved by carbon fiber through 0° and 90°. According to different requirements, customers can choose different density. ",
+            "image_one": "/image-008.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 3,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Roving (Twill Weave)",
+            "product_category": 1,
+            "description": "Carbon Fiber Roving (twill) is weaved by carbon fiber through 0° and 90°. According to different requirements, customers can choose different density.",
+            "image_one": "/image-009.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 4,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Multiaxial fabrics",
+            "product_category": 1,
+            "description": "Carbon fiber multiaxial fabric is weaved by the carbon fiber yarn arrangement angle 0 degrees /90 degrees / + 45, A carbon fiber with polyester thread and weaving fabric.",
+            "image_one": "/image-010.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 5,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Flat Cloth",
+            "product_category": 1,
+            "description": "The carbon fiber precursor is non destructively expanded and then warp and weft knitted. The weaving process has uniform tension, which solves the problems of deviation and deformation in the prepreg process. The fabric surface is smooth and beautiful. The warp and weft yarn of widened carbon fiber fabric has small degree of buckling in the fabric, reduces the bending and \"grid\" phenomenon of fiber bundle in the fabric, reduces the gap rate, improves the surface flatness of the fabric, and the composite material has high fiber volume content and superior mechanical properties.",
+            "image_one": "/image-012.jpg",
+            "image_two": "/image-013.jpg",
+            "image_three": "/image-014.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 6,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Surfacing Mat",
+            "product_category": 1,
+            "description": "Carbon Fiber surface Mat( CST) Products, mainly used in the surface of carbon fiber products, can improve the corrosion resistance of the surface of the products and enhance the compressive strength, anti leakage, prolong service life. The product itself has uniform dispersion of the fiber, soft texture, fiber surface smoothness, low glue content, resin soak speed and film of good characteristics.",
+            "image_one": "/image-015.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 7,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Carbon Fiber Satin Fabric",
+            "product_category": 1,
+            "description": "Carbon fiber satin cloth is a two-way fabric made of carbon fiber yarn with 0 ° and 90 ° flat weaving process. According to different product requirements, carbon fiber satin cloth with different gram weight can be selected.",
+            "image_one": "/image-018.jpg"
+        }
+    },
+
+
+
+    {
+        "model": "store.Product",
+        "pk": 8,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Basalt Fiber UD fabric",
+            "product_category": 2,
+            "description": "Basalt Fiber UD fabric is weaved by basalt fiber through 0° and 90°、 Regard 0° as the main direction and then 90° direction to process to a kind of biaxial fabric. According to different requirements, customers can choose different density",
+            "image_one": "/image-019.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 9,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Basalt Fiber Plain fabric",
+            "product_category": 2,
+            "description": "Basalt Fiber Plain fabric, purchasing basalt fiber yarn with high performance by twisting after the whole process of weaving and weaving. Regard 0° as the main direction to process to a kind of biaxial fabric. According to different requirements, it can be woven into a low density of good permeability of light and light fabric, can also be woven into high density and high strength of the fabric. ",
+            "image_one": "/image-020.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 10,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Basalt Fiber Twill fabric",
+            "product_category": 2,
+            "description": "Basalt Fiber Twill fabric is weaved by basalt fiber through 0° and 90° processing to the biaxial fabric by twill weaving. According to different requirements, customers can choose different density",
+            "image_one": "/image-021.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 11,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Basalt Fiber Satin fabric",
+            "product_category": 2,
+            "description": "Basalt Fiber Stain fabric is weaved by basalt fiber through 0° and 9 0 ° processing to the biaxial fabric by twill weaving. According to different requirements, customers can choose different density",
+            "image_one": "/image-022.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 12,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Basalt Fiber Multiaxial fabric",
+            "product_category": 2,
+            "description": "Basalt fiber multiaxial fabric is weaved by the high performance of the basalt fiber yarn and polyester yarn. There are UD fabric, Biaxial fabric, Triaxial and Quadraxial.",
+            "image_one": "/image-023.jpg"
+        }
+    },
+
+
+
+    {
+        "model": "store.Product",
+        "pk": 13,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Aramid Fiber Plain fabric",
+            "product_category": 3,
+            "description": "Aramid Fiber Plain fabric, purchasing aramid fiber yarn with high performance by twisting after the whole process of weaving and weaving. Regard 0° as the main direction to process to a kind of biaxial fabric. According to different requirements, it can be woven into a low density of good permeability of light and light fabric, can also be woven into high density and high strength of the fabric.",
+            "image_one": "/image-024.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 14,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Aramid Fiber Twill fabric",
+            "product_category": 3,
+            "description": "Aramid Fiber Twill fabric is weaved by aramid fiber through 0° and 90° processing to the biaxial fabric by twill weaving . According to different requirements, customers can choose different density",
+            "image_one": "/image-025.jpg"
+        }
+    },
+
+
+
+    {
+        "model": "store.Product",
+        "pk": 15,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Aramid Fiber and Carbon Fiber Fabric",
+            "product_category": 4,
+            "description": "Aramid Fiber and carbon fiber fabirc, purchasing aramid fiber and carbon fiber with high performance by twisting after the whole process of weaving and weaving. Regard 0° as the main direction to process to a kind of biaxial fabric. According to different requirements, it can be woven into a low density of good permeability of light and light fabric, can also be woven into high density and high strength of the fabric. ",
+            "image_one": "/image-026.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 16,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Aramid Fiber and Fiberglass Fabric",
+            "product_category": 4,
+            "description": "Aramid Fiber and fiberglass fabric, purchasing aramid fiber yarn and fiberglass yarn with high performance by twisting after the whole process of weaving and weaving. Regard 0° as the main direction to process to a kind of biaxial fabric. According to different requirements, it can be woven into a low density of good permeability of light and light fabric, can also be woven into high density and high strength of the fabric.",
+            "image_one": "/image-027.jpg"
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 17,
+        "fields": {
+            "status": "PUBLISHED",
+            "name": "Fiberglass and Carbon Fiber Fabric",
+            "product_category": 4,
+            "description": "Fiberglass and carbon fiber fabric, purchasing fiberglass and carbon fiber with high performance by twisting after the whole process of weaving and weaving. Regard 0° as the main direction to process to a kind of biaxial fabric. According to different requirements, it can be woven into a low density of good permeability of light and light fabric, can also be woven into high density and high strength of the fabric.",
+            "image_one": "/image-028.jpg"
+        }
+    }
+]

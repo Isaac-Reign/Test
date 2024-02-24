@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %} News 产品 | SHEN YUN NEW MATERIAL | 神韵新材料  {% endblock %}
+
+{% block navigation %}
+{% with slug=request.path|slice:'14:-1' %}
+&nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'news' %}" class="text-decoration-none text-white"><i class="fas fa-bullhorn">Articles</i></a></li>
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="py-5 overflow-hidden">
+    {% if paginator %}
+    <div class="row text-center pt-3 mb-5">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Explore more of our Articles</h1>
+        </div>
+    </div>
+
+    <div class="container" >
+        <div class="carousel-related-product row">
+            {% for product in paginator %}
+
+            <div class="p-2 pb-3 col-lg-4 col-md-4 col-sm-6 mb-5">
+                <div class="product-wap card rounded-0 item" id="product-wap">
+                    <div class="card rounded-0 image-overlayd2 text-white w-100 bg-dark p-2">
+                        <h1 class="h1 text-decoration-underline">{{product.updated|date:"d"}} <span class="h6">{{product.updated|date:"M Y"}}</span></h1>
+                        <h3 class="h3"></h3>
+                    </div>
+                    <div class="card-body cardme">
+                        <a href="{% url 'news_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary">{{product.title|truncatewords:7}}</a>
+                        <p class="text-decoration-none">{{product.content|truncatewords:10}}</p>
+                    </div>
+                    <p class="text-center bg-success read"><a href="{% url 'news_details' product.slug %}" class="btn p-1 text-size-0 w-100 text-white">Read more <i class="far fa-eye"></i></a></p>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div></br><br>
+    {% endif %}
+
+    {% if paginator %}
+    <div div="row">
+        <ul class="pagination pagination-lg justify-content-end">
+            {% if paginator.has_previous  %}
+            <li class="page-item">
+                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page=1&q={{q}}" tabindex="-1">First</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{ paginator.previous_page_number }}&q={{q}}" tabindex="-1">Previous</a>
+            </li>
+            {% endif %}
+            <li class="page-item disabled">
+                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#">{{paginator.number}}</a>
+            </li>
+            {% if paginator.has_next %}
+            <li class="page-item disabled">
+                <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">{{paginator.paginator.num_pages}}</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{paginator.next_page_number }}&q={{q}}">Next</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{paginator.paginator.num_pages }}&q={{q}}">Last</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="row text-center pt-3 mb-5">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">No Articles available for now!</h1>
+        </div>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block script %}
+{{block.super}}
+{% endblock %}

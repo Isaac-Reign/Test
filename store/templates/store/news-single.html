@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %} News 产品 | SHEN YUN NEW MATERIALS | 神韵新材料  {% endblock %}
+
+{% block navigation %}
+{% with slug=request.path|slice:'14:-1' %}
+&nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'news' %}" class="text-decoration-none text-white"><i class="fas fa-bullhorn">Articles</i></a></li>
+&nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="" class="text-decoration-none text-white"><i class="fas fa-product"> {{item.slug}}</i></a></li>
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="bg-light">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="w-100 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h2 text-center">{{item.title}}</h2>
+                        <p class="py-2">
+                            <i class="fa fa-eye text-success"></i>
+                            <span class="list-inline-item text-secondary">view: {{views}}</span>
+                        </p>
+                        {% if item.header %}
+                        <h6 class="h2">{{item.header}}</h6>
+                        {% endif %}
+
+                        <ul class="list-unstyled pb-3 text-secondary">
+                            <li>{{item.content}}</li>
+                        </ul>
+
+                        {% if item_section %}
+                        {% for section in item_section %}
+                        <ul class="list-unstyled pb-3 text-secondary">
+                            {% if section.header %}
+                            <h5 class="h5">{{section.header}}</h5>
+                            {% endif %}
+                            <li>{{section.content}}</li>
+                        </ul>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-5 overflow-hidden">
+    {% if related_articles %}
+    <div class="row text-center pt-3 mb-5">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Explore more Articles</h1>
+        </div>
+    </div>
+
+    <div class="container" >
+        <div class="carousel-related-product row">
+            {% for product in related_articles %}
+            <div class="p-2 pb-3 col-lg-4 col-md-4 col-sm-6 mb-5">
+                <div class="product-wap card rounded-0 item" id="product-wap">
+                    <div class="card rounded-0 image-overlayd2 text-white w-100 bg-dark p-2">
+                        <h1 class="h1 text-decoration-underline">{{product.updated|date:"d"}} <span class="h6">{{product.updated|date:"M Y"}}</span></h1>
+                        <h3 class="h3"></h3>
+                    </div>
+                    <div class="card-body cardme">
+                        <a href="{% url 'news_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary">{{product.title|truncatewords:7}}</a>
+                        <p class="text-decoration-none">{{product.content|truncatewords:10}}</p>
+                    </div>
+                    <p class="text-center bg-success read"><a href="{% url 'news_details' product.slug %}" class="btn p-1 text-size-0 w-100 text-white">Read more <i class="far fa-eye"></i></a></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div></br><br>
+    <div class="w-100 mb-5 mt-5 justify-content align-items-center text-center"><a href="{% url 'news' %}" class="btn btn-primary">More Articles</a></div>
+    {% endif %}
+</section>
+{% endblock %}

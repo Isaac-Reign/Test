@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SHEN YUN NEW MATERIAL | 神韵新材料 {% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'store/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'store/css/owl.theme.min.css' %}">
+<link rel="stylesheet" href="{% static 'store/css/owl.transitions.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner pb-5 mt-2" id="carousel-display">
+            <div class="carousel-item active ">
+                <div class="position-relative">
+                    <img src="{% static 'store/images/default/display2.jpg' %}" class="img-fluid w-100 h-100 tempaltemo_footer" alt="...">
+                    <div class="position-absolute top-50 start-50 translate-middle overlay-conten w-100 h-100">
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-lg-6 mb-0 ">
+                                <div class="align-self-center text-secondary fs-italic">
+                                    <h1 class="text-success"><b>Unleash Strength and Style with </b>Carbon Fibe</h1>
+                                    <h3 class="text-light">Lightweight. Durable. Superior Performance</h3>
+                                    <p class="mt-3 text-white">
+                                        Elevate your projects with our carbon fiber products. 
+                                        Experience the perfect fusion of strength and lightweight design. 
+                                        Unlock the potential for enhanced performance, whether it's in automotive, sporting goods,
+                                         or aerospace. Our cutting-edge carbon fiber offerings will redefine your expectations and push boundaries
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item position-relative"> 
+                <img draggable="false" class="img-fluid w-100 h-100 rounded" src="{% static 'store/images/default/display17.jpg' %}" alt="">
+                <div class="position-absolute top-50 start-50 translate-middle overlay-conten w-100 h-100 ">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-0 ">
+                            <div class="text-align-left align-self-center text-secondary fs-italic">
+                                <h1 class="text-success"><b>Discover the Versatility of </b>Basalt Fiber</h1>
+                                <h3 class="text-light">Natural Elegance. Unmatched Resilience</h3>
+                                <p class="mt-3 text-white">
+                                    Experience the exceptional properties of basalt fiber.
+                                     Our sustainable solutions will impress you with their versatility, 
+                                     resilience, and natural beauty. Whether you're looking for stunning architectural
+                                      elements or high-performance composite materials, our basalt fiber products offer
+                                       the perfect blend of strength and sustainability
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item position-relative"> 
+                <img draggable="false" class="img-fluid w-100 h-100 rounded" src="{% static 'store/images/default/display16.jpg' %}" alt="">
+                <div class="position-absolute top-50 start-50 translate-middle overlay-conten w-100 h-100 ">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-0 ">
+                            <div class="text-align-left align-self-center text-secondary fs-italic">
+                                <h1 class="text-success"><b>Trust in Unrivaled Protection with </b>Aramid Fiber Fabrics</h1>
+                                <h3 class="text-light">Reliable. High-performance. Uncompromising Safety</h3>
+                                <p class="mt-3 text-white">
+                                    Feel secure in any situation with our top-of-the-line Aramid Fiber Fabrics products. 
+                                    Designed to provide ultimate protection and unbeatable reliability,
+                                     our offerings ensure your safety comes first. 
+                                     With uncompromising strength and durability, our Aramid Fiber Fabrics will exceed your expectations and grant you peace of mind
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item position-relative"> 
+                <img draggable="false" class="img-fluid w-100 h-100 rounded" src="{% static 'store/images/default/display9.jpg' %}" alt="">
+                <div class="position-absolute top-50 start-50 translate-middle overlay-conten w-100 h-100 ">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-lg-6 mb-0 ">
+                            <div class="text-align-left align-self-center text-secondary fs-italic">
+                                <h1 class="text-success"><b>Step Into the Future with </b>Hybrid Fibers</h1>
+                                <h3 class="text-light">Innovative. Versatile. Enhanced Performance</h3>
+                                <p class="mt-3 text-white">
+                                    Experience the power of innovation with our cutting-edge hybrid fiber products. 
+                                    Seamlessly combining the best attributes of different fibers, 
+                                    our offerings redefine performance standards. 
+                                    Adaptability meets enhanced performance to offer limitless possibilities across various industries.
+                                     Embrace a new level of functionality and unlock a superior level of performance with our hybrid fibers
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- End Banner Hero -->
+    <section class="container py-5">
+        {% if products %}
+        <div class="row text-center pt-3 mb-5">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Most Hot Products</h1>
+            </div>
+        </div>
+        {% else %}
+        <div class="row text-center pt-3 mb-5">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">No Product for now!</h1>
+            </div>
+        </div>
+        {% endif %}
+        <div class="carousel-related-product row" id="products-display">
+            {% if products %}
+            {% for product in products %}
+            <div class="p-2 pb-3 col-6 col-md-4">
+                <div class="product-wap card rounded-0 item" id="product-wap">
+                    <div class="card rounded-0 image-overlay w-100">
+                        <img class="card-img rounded-0 img-fluid h-100 related-img" src="{{product.image_one.url}}" id="related-img1">
+                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                            <ul class="list-unstyled">
+                                <li><a class="btn btn-success text-white mt-2" href="{% url 'product_details' product.slug %}"><i class="far fa-eye"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="overlay-spinner bg-light h-100"></div>
+                        <span class="spinner-grow position-absolute overlay-spinner1"></span>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name}}</a>
+                        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                            <li class="pt-2">
+                                <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success">View <i class="far fa-eye"></i></a></p>
+
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="w-100 mb-5 mt-5 justify-content align-items-center text-center"><a href="{% url 'products' %}" class="btn btn-primary">More Products</a></div>
+    </section>
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-building fa-lg" aria-hidden="true"></i></div>
+                    <h2 class="h5 mt-4 text-center"><span class="h2">14</span> Years</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fas fa-grip-horizontal"></i></div>
+                    <h2 class="h5 mt-4 text-center"><span class="h2">50000</span><br>Manufacturing Base <sub>m</sub><sup>2</sup></h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
+                    <h2 class="h5 mt-4 text-center"><span class="h2">1700</span><br>Annual productivity (Ton)</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 pb-5">
+                <div class="h-100 py-5 services-icon-wap shadow">
+                    <div class="h1 text-success text-center"><i class="fa fa-user"></i></div>
+                    <h2 class="h5 mt-4 text-center"><span class="h2">320</span> Employees</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="demo d-flex justify-content-center pt-5">
+        <div class="container">
+            <h2 class="h2 text-center text-white mb-5">What Our clients says about us</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/Flag_of_Australia.png' %}">
+                            </div>
+                            <h3 class="title">Australia</h3>
+                            <span class="post">Emma S**</span>
+                            <p class="description">
+                                Exceptional service and quality products. Will definitely be a repeat customer. Highly recommend!
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/Flag_of_Russia.png' %}">
+                            </div>
+                            <h3 class="title">Russia Federation</h3>
+                            <span class="post">Kristina D**</span>
+                            <p class="description">
+                                Exceptional range of hybrid fiber products. Great value for money. 5-star service!
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/china.png' %}">
+                            </div>
+                            <h3 class="title">China</h3>
+                            <span class="post">Jilgoen T**</span>
+                            <p class="description">
+                                Impressive selection and fast delivery. My go-to for all fiber needs. Bravo!
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/Flag_of_Singapore.png' %}">
+                            </div>
+                            <h3 class="title">Singapore</h3>
+                            <span class="post">Sarah C**</span>
+                            <p class="description">
+                                Absolutely love the quality of their products. Superb service and fast delivery. Will definitely recommend!
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/Flag_of_United_States.png' %}">
+                            </div>
+                            <h3 class="title">United States</h3>
+                            <span class="post">Sophia L**</span>
+                            <p class="description">
+                                Exceptional customer experience. Their carbon fiber exceeded my expectations. Highly recommended!
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <div class="pic">
+                                <img src="{% static 'store/images/flags/Flag_of_South_Korea.png' %}">
+                            </div>
+                            <h3 class="title">South Korea</h3>
+                            <span class="post">Erica M**</span>
+                            <p class="description">
+                                Outstanding service and fast shipping. Their Basalt Fiber Products are unmatched in quality!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Featured Product -->
+    <section class="bg-light py-5">
+        <div class="container ">
+            {% if articles %}
+            <div class="row text-center pt-3 mb-5">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Articles</h1>
+                </div>
+            </div>
+            <div class="row">
+                {% if articles.0 %}
+                <div class="col-12 col-md-4 mb-4 text-decoration-none">
+                    <a href="{% url 'news_details' articles.0.slug %}" class="text-decoration-none card h-100">
+                        
+                        <div id="products-rate">
+                            <img src="{% static 'store/images/default/news1.jpg' %}" class="card-img-top h-100" alt="..." draggable="false">
+                        </div>
+                        <div href="#" class="card-body">
+                            <div class="h5 text-decoration-none text-success">{{articles.0.title|truncatewords:10}}</div>
+                            <p class="card-text">
+                                {{articles.0.content|truncatewords:20}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% if articles.1 %}
+                <div class="col-12 col-md-4 mb-4 text-decoration-none">
+                    <a href="{% url 'news_details' articles.1.slug %}" class="text-decoration-none card h-100">
+                        
+                        <div id="products-rate">
+                            <img src="{% static 'store/images/default/news2.jpg' %}" class="card-img-top h-100" alt="..." draggable="false">
+                        </div>
+                        <div href="#" class="card-body">
+                            <div class="h5 text-decoration-none text-success">{{articles.1.title|truncatewords:10}}</div>
+                            <p class="card-text">
+                                {{articles.1.content|truncatewords:20}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% if articles.2 %}
+                <div class="col-12 col-md-4 mb-4 text-decoration-none">
+                    <a href="{% url 'news_details' articles.2.slug %}" class="text-decoration-none card h-100">
+                        
+                        <div id="products-rate">
+                            <img src="{% static 'store/images/default/news3.jpg' %}" class="card-img-top h-100" alt="..." draggable="false">
+                        </div>
+                        <div href="#" class="card-body">
+                            <div class="h5 text-decoration-none text-success">{{articles.2.title|truncatewords:10}}</div>
+                            <p class="card-text">
+                                {{articles.2.content|truncatewords:20}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w-100 mb-5 mt-5 justify-content align-items-center text-center"><a href="{% url 'news' %}" class="btn btn-primary">More Articles</a></div>
+        {% endif %}
+    </section>
+
+    <section  class="mb-5 d-flex justify-content align-self-center w-100 container">
+        <div>
+            <img src="{% static 'store/images/default/togerther.png' %}" class="card-img rounded-0 img-fluid related-img" alt="" style=" object-fit: cover; background: no-repeat;">
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+{{block.super}}
+<script>
+    $(document).ready(function(){
+        setTimeout(function(){
+        $('#contactForm').fadeIn();
+        $("body").addClass('open')
+        }, 5000 * 3);
+        
+        $("#testimonial-slider").owlCarousel({
+        items:1,
+        itemsDesktop:[1000,1],
+        itemsDesktopSmall:[979,1],
+        itemsTablet:[768,1],
+        pagination:true,
+        transitionStyle:"backSlide",
+        autoPlay:true
+        });
+    });
+    </script>
+    <script src="{% static 'store/js/ajax.js' %}"></script>
+{% endblock %}

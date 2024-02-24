@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %} Products 产品 | SHEN YUN NEW MATERIAL | 神韵新材料  {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Start Content -->
+<div class="container py-5">
+    <div class="row">
+        <div class="m-auto">
+            {% if q %}
+            <h2 class="h2 text-center text-secondary mt-3 mb-5">{{q}}</h2>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline shop-top-menu pb-3 pt-1">
+                        <li class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3 {% if q == '' %} text-success {% endif %}" href="{% url 'products' %}">All Products</a>
+                        </li> 
+                        {% if q %}
+                        <li class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3 text-success" href="#">Available Products<span class="bg-light text-success p-2 rounded">{{query|length }}</span></a>
+                        </li> 
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+                <div class="col-md-6 pb-4">
+                    <div class="d-flex">
+                        <select class="form-control border-info" id="select-link-item">
+                            <option>--Select Category--</option>
+                            {% for products in product_catalogues %}
+                            <option value="{% url 'products' %}?q={{products.name}}">{{products.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row carousel-related-product"> -->
+                
+                <div class="carousel-related-product row">
+                    {% if query %}
+                    {% for product in query %}
+                    <div class="p-2 pb-3 col-6 col-md-4">
+                        <div class="product-wap card rounded-0 item" id="product-wap">
+                            <div class="card rounded-0 image-overlay w-100">
+                                <img class="card-img rounded-0 img-fluid h-100 related-img" src="{{product.image_one.url}}" id="related-img1">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <!-- <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li> -->
+                                        <li><a class="btn btn-success text-white mt-2" href="{% url 'product_details' product.slug %}"><i class="far fa-eye"></i></a></li>
+                                        <!-- <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li> -->
+                                    </ul>
+                                </div>
+                                <div class="overlay-spinner bg-light h-100"></div>
+                                <span class="spinner-grow position-absolute overlay-spinner1"></span>
+                            </div>
+                            <div class="card-body">
+                                <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name}}</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success">View <i class="far fa-eye"></i></a></p>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="p-5 text-center pb-3 mb-5 bg-dark">
+                        <h2 class="h2 text-warning mt-3 mb-5"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Search>> <span class="text-secondary">"{{q}}"</span> was not found.</h2>
+                        <p class="text-white">You can Contact us now! with the below button</p>
+                    </div>
+                    {% endif %}
+                </div>
+            <!-- </div> -->
+            
+            {% if query %}
+            <div div="row">
+                <ul class="pagination pagination-lg justify-content-end">
+                    {% if query.has_previous  %}
+                    <li class="page-item">
+                        <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page=1&q={{q}}" tabindex="-1">First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{ query.previous_page_number }}&q={{q}}" tabindex="-1"><i class="fas fa-angle-double-left text-secondary"></i></a>
+                    </li>
+                    {% endif %}
+                    <li class="page-item disabled">
+                        <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#">{{query.number}}</a>
+                    </li>
+                    {% if query.has_next %}
+                    <li class="page-item disabled">
+                        <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">{{query.paginator.num_pages}}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{query.next_page_number }}&q={{q}}">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark text-success" href="?page={{query.paginator.num_pages }}&q={{q}}"><i class="fas fa-angle-double-right text-secondary"></i></a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+<!-- End Content -->
+{% endblock %}
+
+
+{% block script %}
+{{block.super }}
+<script>
+    $(document).ready(function(){
+        setTimeout(function(){
+        $('#contactForm').fadeIn();
+        $("body").addClass('open')
+        }, 6500 * 4);
+
+        $("#select-link-item").on("change", function() {
+            var selected = $(this).val();
+            if (selected !== "") {
+                window.location.href = selected;
+            }
+        });
+    });
+</script>
+{% endblock %}

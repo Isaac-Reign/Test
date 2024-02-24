@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{% static 'store/images/logo3.JPG' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'store/images/logo3.JPG' %}">
+
+    <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/custom.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{% static 'store/css/fontawesome.min.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between align-items-center">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:shenyunnewmaterials@gmail.com">shenyunnewmaterials@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:+86 (0573) 81882298">+86 (0573) 81882298</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:+86 (0573) 88132959">+86 (0573) 88132959</a>
+                </div>
+                <!-- <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp fa-sm fa-fw"></i></a>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a id="logo-container" class="navbar-brand text-success logo h4 align-self-center d-flex justify-content-between align-items-center" href="{% url 'home' %}">
+            <img class="rounded-circle" src="{% static './store/images/logo3.JPG' %}" alt=""><span>SHEN YUN<br>NEW MATERIALS<br><hr class="mt-1 mb-1"></span>
+          </a>
+      
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+            <div class="flex-fill">
+              <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %}"> {% if request.path == '/' %} <i class="fas fa-home active  "></i>{% endif %} Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if request.path == '/products/' %} active {% endif %}" href="{% url 'products' %}">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  {% if request.path == '/articles/' %} active {% endif %}" href="{% url 'news' %}">Articles</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {% if request.path == '/about/' %} active {% endif %}" href="{% url 'about' %}">About Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar align-self-center d-flex">
+              <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                <form action="{% url 'products' %}" method="get" class="modal-content modal-body border-0 p-0">
+                    <div class="input-group">
+                    <input type="text" class="form-control" name="q" id="inputMobileSearch" placeholder="Search ...">
+                    <button type="submit" class="input-group-text">
+                        <i class="fa fa-fw fa-search"></i>
+                    </button>
+                    </div>
+                </form>
+              </div>
+              <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                <i class="fa fa-fw fa-search text-dark mr-2"></i>
+              </a>
+              <!-- <a class="nav-icon position-relative text-decoration-none" href="#">
+                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+              </a>
+              <a class="nav-icon position-relative text-decoration-none" href="#">
+                <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    <!-- Close Header -->
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+          <div class="w-100 pt-1 mb-5 text-right">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="{% url 'products' %}" method="get" class="modal-content modal-body border-0 p-0">
+              <div class="input-group mb-2">
+                  <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                  <button type="submit" class="input-group-text bg-success text-light">
+                      <i class="fa fa-fw fa-search text-white"></i>
+                  </button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+    <div class="position-relative path template" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static random_img %}');">
+        <div class="position-absolute top-50 start-50 translate-middle overlay-conten w-100 h-100">
+            <div class="row h-100">
+                <div class="col-6 mt-5 text-white nav-width">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center w-100">
+                        <li><a href="{% url 'home' %}" class="text-decoration-none text-white"><i class="fas fa-home"> Home</i></a></li> &nbsp;&nbsp;
+
+                        {% if request.path == '/news/' %}
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'news' %}" class="text-decoration-none text-white"><i class="fas fa-bullhorn"> Articles</i></a></li>
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;{% elif request.path == '/products/' %}
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'products' %}" class="text-decoration-none text-white">  <i class="fas fa-briefcase"> Products</i></a></li>
+                        {% elif request.path == '/about/' %}
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'about' %}" class="text-decoration-none text-white"><i class="fas fa-user"> About Us</i></a></li>
+                        {% elif request.path != '/' %}
+                        
+                        {% block navigation %}
+                        {% with slug=request.path|slice:'10:-1' %}
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="{% url 'products' %}" class="text-decoration-none text-white"><i class="fas fa-briefcase"> Products</i></a></li>
+                        &nbsp;&nbsp;<i class="fas fa-angle-double-right text-success"></i>&nbsp;&nbsp;<li><a href="" class="text-decoration-none text-white"><i class="fas fa-product"> {{slug}}</i></a></li>
+                        {% endwith %}
+                        {% endblock %}
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-white h-100">
+                    <h1 class="h1 pb-4">Products Categories</h1>
+                    <ul class="list-unstyled templatemo-accordion h-100" style="overflow-y: auto; overflow-x: hidden; padding-bottom: 200px;">
+                        {% for products in product_catalogues %}
+                        <li class="mb-4">
+                            <a class="collapsed d-flex justify-content-between text-white h3 text-decoration-none" href="#">
+                                {{products.name}}
+                                <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                            </a>
+                            
+                            <ul class="collapse show list-unstyled cate-list" >
+                                {% for product in products.product_set.all %}
+                                <li class="mt-3"><a class="text-decoration-none text-white" href="{% url 'product_details' product.slug %}">{{product.name}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                        <br><br><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--  -->
+    <div class="w-100 h-100 popup-form path" id="contactForm" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static random_img %}');">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form class="contact-form position-relative" id="contact-form" method="POST">
+                    <style>
+                        .success {
+                            color: rgb(0, 224, 157);
+                        }
+                
+                        .error {
+                            /* color: rgb(255, 18, 176); */
+                            color: magenta;
+                        }
+                    </style>
+                    {% csrf_token %}
+                    <span class="close position-absolute" role="button">&times;</span>
+                    <h1 class="h1 text-white text-center mb-4"><i class="fas fa-envelope"></i> Get in Tocuh!</h1>
+                    <ul class="list-inline text-left footer-icons justify-content-between d-flex bg-dark p-3 rounded mt-5 justify-content-between">
+                        <h5 class="h5 text-white text-center">Send us a message and we will get back to you as soon as possible</h5>
+                    </ul>
+                    <div class="form-group position-relative mb-4 outline-none">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" class="form-control" required placeholder="Enter Name*">
+                    </div>
+                    <div class="form-group position-relative mb-4">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="Enter Email*">
+                    </div>
+                    <div class="form-group position-relative mb-4">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone e.g +86 000000000*" required>
+                    </div>
+                    <div class="form-group position-relative mb-4">
+                        <i class="fas fa-pencil-alt"></i>
+                        <textarea id="message" class="form-control" name="message" required placeholder="Type in message*..."></textarea>
+                    </div>
+                    <div class=" p-3" style="background-color: rgba(0, 0, 0, 0.493);">
+                        <div class="d-flex justify-content-start align-items-center mb-2">
+                            <button type="submit" class="btn btn-primary m-1">Send Message</button>
+                            <div id="loading-indicator" style="display: none;" class="text-success">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </div>
+                        </div>
+                        <div id="message-container" style="display: none;"></div>
+                    </div>
+                    <br><br>
+
+                    <div class="border-success rounded mr-3 p-3 text-secondary" style="background-color: rgba(0, 0, 0, 0.493);">
+                        <h3 class="h3"><i class="fa fa-phone fa-fw"></i> Phone:</h3>
+                        <li>
+                            <a class="text-decoration-none text-white" href="tel:+86 (0573) 88132959">+86 (0573) 88132959 
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none text-white" href="tel:+86 (0573) 81882298">Fax +86 (0573) 81882298
+                            </a>
+                        </li><br>
+                        <h3 class="h3"><i class="fa fa-envelope fa-fw"></i> Email:</h3>
+                        <li>
+                            <a class="text-decoration-none text-white" href="mailto:shenyunnewmaterials@gmail.com">shenyunnewmaterials@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none text-white" href="mailto:tangsi01@tang-si.cn">tangsi01@tang-si.cn</a>
+                        </li>
+                    </div>
+                    
+
+                    <ul class="list-inline text-left footer-icons justify-content-between d-flex bg-dark p-3 rounded mt-5 justify-content-between">
+                        <h5 class="h5 text-white text-center">Do you need a webiste? Contact Developer</h5>
+                    </ul>
+                    <div class="border-success rounded mr-3 p-3 text-secondary" style="background-color: rgba(0, 0, 0, 0.493);">
+                        <h3 class="h3"><i class="fa fa-phone fa-fw"></i> Phone:</h3>
+                        <li>
+                            <a class="text-decoration-none text-white" href="tel:+233 (5599) 34232">+233 (5599) 34232 
+                            </a>
+                        </li>
+                        <br>
+                        <h3 class="h3"><i class="fa fa-envelope fa-fw"></i> Email:</h3>
+                        <li>
+                            <a class="text-decoration-none text-white" href="mailto:isaac.developer99@gmail.com">isaac.developer99@gmail.com</a>
+                        </li>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="contactIcon" class="contact-icon bg-success rounded p-3 text-white">
+        <i class="fas fa-envelope"></i> Contact Us
+    </div>
+    
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Start Footer -->
+    <footer class="" id="tempaltemo_footer" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static random_img %}');">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <a id="logo-container-b" class="navbar-brand text-success logo h4 align-self-center d-flex align-items-center" href="{% url 'home' %}">
+                        <img class="rounded-circle" src="{% static './store/images/logo3.JPG' %}" alt=""><span>SHEN YUN<br>NEW MATERIALS<br><hr class="mt-1 mb-1"></span>
+                    </a>
+                    
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Tongde Road 888, Tongxiang Economic Development Zone, Zhejiang Province
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="tel:+86 (0573) 88132959"><i class="fa fa-phone fa-fw"></i> +86 (0573) 88132959 
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="tel:+86 (0573) 81882298"><i class="fa fa-phone fa-fw"></i> Fax +86 (0573) 81882298
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="mailto:shenyunnewmaterials@gmail.com"><i class="fa fa-envelope fa-fw"></i> shenyunnewmaterials@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="mailto:tangsi01@tang-si.cn"><i class="fa fa-envelope fa-fw"></i> tangsi01@tang-si.cn</a>
+                        </li>
+                        <li style="width: 150px; height: 105px;">
+                           <img class="w-100 h-100" src="{% static 'store/images/default/qr.png' %}" style=" object-fit: cover; background: no-repeat;" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light text-center">Products</h2>
+                    <ul class="list-unstyled text-light footer-link-list cate-list" style="overflow-y: auto; max-height: 350px;">
+                    {% for products in product_catalogues %}
+                        {% with product_list=products.product_set.all %}
+                            {% for product in product_list|slice:":8" %}
+                                <li><a class="text-decoration-none" href="{% url 'product_details' product.slug %}">{{ product.name }}</a></li>
+                            {% endfor %}
+                        {% endwith %}
+                    {% endfor %}
+                    <li><a class="text-decoration-none" href="{% url 'products' %}">More...</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light text-center border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="{% url 'home' %}">Home</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'products' %}">Products</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'news' %}">Articles</a></li>
+                        <li><a class="text-decoration-none" href="{% url 'about' %}">About Us</a></li><hr>
+
+                        <div class="p-1" style=" background-color: rgba(0, 0, 0, 0.493);"> 
+                            <li class="text-success">Do you need a website for your bussiness? Reach out to our talented and budge-friendly website developer!👩‍💻 Contact the web developer now</a></li>
+                            <li>
+                                <a class="text-decoration-none" href="mailto:isaac.developer99@gmail.com"><i class="fa fa-envelope fa-fw"></i> isaac.developer99@gmail.com</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none" href="tel:+233559934232"><i class="fa fa-phone fa-fw"></i>/<i class="fab fa-whatsapp fa-lg fa-fw"></i> +233 (5599) 34232</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+            <!--
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light text-center">
+                            &copy; Copyright <a rel="sponsored" href="{% url 'about' %}">Jiaxing Shen Yun New Materials Co., Ltd.</a> All rights reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+    {% block script %} 
+    <script src="{% static 'store/js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'store/js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'store/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'store/js/templatemo.js' %}"></script>
+    <script src="{% static 'store/js/custom.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').submit(function(e) {
+                e.preventDefault();
+
+                if (!navigator.onLine) {
+                    $('#message-container').html('<i class="fas fa-exclamation-circle"></i> You are currently offline. Please connect to the internet to send the message.').removeClass('success').addClass('error').show();
+                    return;
+                }
+
+                var form = $(this);
+                var formData = form.serialize();
+
+                $('#loading-indicator').show();
+                $('#message-container').empty();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    data: formData,
+                    success: function(response) {
+                        $('#loading-indicator').hide();
+
+                        if (response.success) {
+                            $('#message-container').html('<i class="fas fa-check-circle"></i> ' + response.message).removeClass('error').addClass('success').show();
+                            form.trigger('reset');
+                        } else {
+                            $('#message-container').html('<i class="fas fa-exclamation-circle"></i> ' + response.message).removeClass('success').addClass('error').show();
+                        }
+                    },
+                    error: function(response) {
+                        $('#loading-indicator').hide();
+                        $('#message-container').html('<i class="fas fa-exclamation-circle"></i> An error occurred. Please try again.').removeClass('success').addClass('error').show();
+                    }
+                });
+            });
+        });
+    </script>
+
+    {% endblock %}
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>
