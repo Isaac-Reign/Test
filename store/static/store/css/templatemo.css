@@ -349,11 +349,13 @@ body.open {
 
 @media (min-width: 576px) {
   .tempaltemo-carousel .h1 { font-size: 1em !important;}
-  .nav-width {
+}
+
+@media (max-width: 776px) {
+    .nav-width {
     width: 100%;
 }
 }
-
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   #templatemo_main_nav .navbar-nav {max-width: 450px;}
