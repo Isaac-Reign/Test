@@ -6,7 +6,7 @@
     <title>{% block title %} {% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!--
     <link rel="apple-touch-icon" href="{% static 'store/images/logo3.JPG' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'store/images/logo3.JPG' %}">
 
@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    -->
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -378,12 +378,14 @@
     </footer>
     <!-- End Footer -->
     {% block script %} 
+    <!--
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.4.1.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="{% static 'store/js/templatemo.js' %}"></script>
     <script src="{% static 'store/js/custom.js' %}"></script>
+
     <script>
         $(document).ready(function() {
             $('#contact-form').submit(function(e) {
@@ -422,7 +424,7 @@
             });
         });
     </script>
-
+    -->
     {% endblock %}
     {% block extra_js %}
     {% endblock %}
