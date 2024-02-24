@@ -148,14 +148,12 @@
                             <img class="card-img rounded-0 img-fluid h-100 related-img" src="{{product.image_one.url}}" id="related-img1">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
                                     <li><a class="btn btn-success text-white mt-2" href="{% url 'product_details' product.slug %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name}}</a>
+                            <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name|truncatewords:10}}</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li class="pt-2">
                                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -166,7 +164,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success">View <i class="far fa-eye"></i></a></p>
+                        <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success zme">View <i class="far fa-eye"></i></a></p>
 
                     </div>
                 </div>
@@ -189,14 +187,12 @@
                             <img class="card-img rounded-0 img-fluid h-100 related-img" src="{{product.image_one.url}}" id="related-img1">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
                                     <li><a class="btn btn-success text-white mt-2" href="{% url 'product_details' product.slug %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name}}</a>
+                            <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name|truncatewords:10}}</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li class="pt-2">
                                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -207,7 +203,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success">View <i class="far fa-eye"></i></a></p>
+                        <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success zme">View <i class="far fa-eye"></i></a></p>
 
                     </div>
                 </div>

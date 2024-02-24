@@ -138,7 +138,7 @@
                         <span class="spinner-grow position-absolute overlay-spinner1"></span>
                     </div>
                     <div class="card-body">
-                        <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name}}</a>
+                        <a href="{% url 'product_details' product.slug %}" class="h3 pt-2 pb-2 text-secondary text-decoration-none">{{product.name|truncatewords:10}}</a>
                         <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                             <li class="pt-2">
                                 <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -149,7 +149,7 @@
                             </li>
                         </ul>
                     </div>
-                    <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success">View <i class="far fa-eye"></i></a></p>
+                    <p class="text-center"><a href="{% url 'product_details' product.slug %}" class="btn p-1 text-size-0 w-100 border-success text-success zme">View <i class="far fa-eye"></i></a></p>
 
                 </div>
             </div>
