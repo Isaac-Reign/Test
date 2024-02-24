@@ -19,16 +19,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.contrib.auth.views import LoginView
-from django_otp.forms import OTPLoginForm
-from django_otp.views import login_with_otp
+#from django.contrib.auth.views import LoginView
+#from django_otp.forms import OTPLoginForm
+#from django_otp.views import login_with_otp
 
 handler404 = 'store.views.coustom404'
 urlpatterns = [
     path("", include('store.urls')),
     
-    path('admin/login/', LoginView.as_view(authentication_form=OTPLoginForm), name='admin_login'),
-    path('admin/login/otp/', login_with_otp, name='admin_otp_login'),
+   # path('admin/login/', LoginView.as_view(authentication_form=OTPLoginForm), name='admin_login'),
+    #path('admin/login/otp/', login_with_otp, name='admin_otp_login'),
     path('admin/', admin.site.urls),
 ]
 
