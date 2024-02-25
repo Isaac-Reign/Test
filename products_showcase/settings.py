@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   # 'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
 
     'django.contrib.sitemaps',
     'store',
@@ -133,11 +133,11 @@ MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 #STATIC_ROOT = '/opt/render/project/src/static/'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'store/static')
-]
+     os.path.join(BASE_DIR, 'store/static')
+ ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
